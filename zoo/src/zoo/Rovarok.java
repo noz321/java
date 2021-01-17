@@ -4,21 +4,17 @@ import java.util.ArrayList;
 
 public class Rovarok extends Ketrec{
 
-	static double rovarMeret = 0.1;
+	double rovarMeret = 0.1;
 	String eszik = "farkas";
 
-	public double getRovarMeret() {
-		return rovarMeret;
-	}
-
-	public Rovarok(double meret, double szabadHely, ArrayList<String> beutaltak, int tooMuch, double rovarMeret,
+	public Rovarok(double szabadHely, ArrayList<String> beutaltak, int tooMuch, double rovarMeret,
 			String eszik) {
-		super(meret, szabadHely, beutaltak);
-		Rovarok.rovarMeret = rovarMeret;
+		super(szabadHely, beutaltak);
+		this.rovarMeret = rovarMeret;
 		this.eszik = eszik;
 	}
 	
-	public static void rovarEloszto() {
+	public static void rovarEloszto(double rovarMeret, double szabadHely) {
 		if(szabadHely == 0) {
 			terrariumSzam++;
 		} else {

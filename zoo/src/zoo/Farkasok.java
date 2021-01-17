@@ -7,18 +7,14 @@ public class Farkasok extends Ketrec {
 	double farkasMeret = 1.5;
 	String eszik = "madar";
 
-	public double getMeret() {
-		return farkasMeret;
-	}
-
-	public Farkasok(double meret, double szabadHely, ArrayList<String> beutaltak, int tooMuch, double farkasMeret,
+	public Farkasok(double szabadHely, ArrayList<String> beutaltak, int tooMuch, double farkasMeret,
 			String eszik) {
-		super(meret, szabadHely, beutaltak);
+		super(szabadHely, beutaltak);
 		this.farkasMeret = farkasMeret;
 		this.eszik = eszik;
 	}
 
-	public void farkasEloszto() {
+	public static void farkasEloszto(double farkasMeret, double szabadHely) {
 		if(szabadHely < farkasMeret) {
 			ragadozoKifutoSzam++;
 		} else {

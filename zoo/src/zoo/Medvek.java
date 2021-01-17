@@ -7,18 +7,15 @@ public class Medvek extends Ketrec {
 	double medveMeret = 7.5;
 	String[] eszik = { "rovar", "kigyo", "madar" };
 
-	public double getMeret() {
-		return medveMeret;
-	}
 
-	public Medvek(double meret, double szabadHely, ArrayList<String> beutaltak, int tooMuch, double medveMeret,
+	public Medvek(double szabadHely, ArrayList<String> beutaltak, int tooMuch, double medveMeret,
 			String[] eszik) {
-		super(meret, szabadHely, beutaltak);
+		super(szabadHely, beutaltak);
 		this.medveMeret = medveMeret;
 		this.eszik = eszik;
 	}
 
-	public void medveEloszto() {
+	public static void medveEloszto(double medveMeret, double szabadHely) {
 		if(szabadHely < medveMeret) {
 			ragadozoKifutoSzam++;
 		} else {

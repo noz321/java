@@ -5,28 +5,28 @@ import java.util.ArrayList;
 public class Madarak extends Ketrec {
 	double madarMeret = 3.0;
 	String eszik = "rovar";
+	static int madarKetrecSzam;
 	
-	 public static void madarEloszto(double madarMeret, double szabadHely) {
+	 public static int madarEloszto(double madarMeret, double szabadHely) {
 		 
 		if(szabadHely < madarMeret) {
 			madarKetrecSzam++;
 		} else {
 			szabadHely -= madarMeret;
 		}
+		return madarKetrecSzam;
 		}
 
-
-	
-	public double getMadarMeret() {
-		return madarMeret = 3.0;
-	}
-
-	public Madarak(double meret, double szabadHely, ArrayList<String> beutaltak, int tooMuch, double madarMeret,
+	public Madarak(double szabadHely, ArrayList<String> beutaltak, int tooMuch, double madarMeret,
 			String eszik) {
-		super(meret, szabadHely, beutaltak);
+		super(szabadHely, beutaltak);
 		this.madarMeret = madarMeret;
 		this.eszik = eszik;
 
 		madarEloszto(madarMeret,szabadHely);
 	}
+
+
+	
+	
 }

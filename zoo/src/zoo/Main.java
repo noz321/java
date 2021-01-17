@@ -6,17 +6,20 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main extends Ketrec {
-	
-	public Main(double meret, double szabadHely, ArrayList<String> beutaltak) {
-		super(meret, szabadHely, beutaltak);
-		// TODO Auto-generated constructor stub
-		
-		
-		
-		
+
+	public Main(double szabadHely, ArrayList<String> beutaltak) {
+		super(szabadHely, beutaltak);
+
 	}
 
+	@SuppressWarnings("static-access")
 	public static void main(String[] args) throws FileNotFoundException {
+		double madarMeret = 3.0;
+		double rovarMeret = 0.1;
+		double medveMeret = 7.5;
+		double farkasMeret = 1.5;
+		double kigyoMeret = 5.0;
+
 		ArrayList<String> madarKetrec = new ArrayList<>();
 		ArrayList<String> terrarium = new ArrayList<>();
 		ArrayList<String> ragadozoKifuto = new ArrayList<>();
@@ -31,67 +34,58 @@ public class Main extends Ketrec {
 		while (scnr.hasNextLine()) {
 			eloszto.add(scnr.nextLine());
 
-			System.out.println(lineNumber + " :" + eloszto);
+//			System.out.println(lineNumber + " :" + eloszto);
 			lineNumber++;
 		}
-		scnr.close();
+		
 
-		for (String szetdobal : eloszto) {
+		while (scnr.hasNext()) {
 
 			switch (scnr.nextLine()) {
-			
-			
-				case "madar": 
-					
-					Madarak.madarEloszto(getMadarMeret(), szabadHely);
-					break;
-					
-				case "rovar":
-					
-					Rovarok.rovarEloszto(getRovarMeret(), szabadHely);
-					break;
 
-				case "kigyo":
-					
-					Kigyok.kigyoEloszto() ;
-					break;
-					
-				case "farkas":
-					
-					Farkasok.farkasEloszto(geFarkasMeret(), szabadHely);
-					break;
-					
-				case "medve":
-					
-					Medvek.medveEloszto(getMedveMeret(), szabadHely);
-					break;
-					
+			case "madar":
+				for(int i = 0; i < madarKetrec.size(); i++) {
+			//	for (String madaroszt : madarKetrec) {
+					Madarak.madarEloszto(madarMeret, szabadHely);
+				}
+				
+				break;
+
+			case "rovar":
+				for (String rovaroszt : terrarium) {
+					Rovarok.rovarEloszto(rovarMeret, szabadHely);
+				}
+				
+				break;
+
+			case "kigyo":
+				for (String kigyooszt : terrarium) {
+					Kigyok.kigyoEloszto(kigyoMeret, szabadHely);
+				}
+				break;
+
+			case "farkas":
+				for (String farkasoszt : ragadozoKifuto) {
+					Farkasok.farkasEloszto(farkasMeret, szabadHely);
+				}
+				break;
+
+			case "medve":
+				for (String medveoszt : ragadozoKifuto) {
+					Medvek.medveEloszto(medveMeret, szabadHely);
+				}
+				break;
+
 			}
-//			else if ((eloszto.contains("medve")) && ((ragadozoKifuto.getSzabadHely() > 7.5))) {
-//				ragadozoKifuto.beutaltak.add("medve \\n");
-//				ragadozoKifuto.setSzabadHely(-7.5);
-//
-//			} else if ((eloszto.contains("farkas")) && ((ragadozoKifuto.getSzabadHely() > 4.5))
-//					&& (ragadozoKifuto.getTooMuch() < 3)) {
-//				ragadozoKifuto.beutaltak.add("farkas \\n");
-//				ragadozoKifuto.setSzabadHely(-4.5);
-//				ragadozoKifuto.setTooMuch(1);
-//
-//			} else if ((eloszto.contains("rovar")) && ((terrarium.getSzabadHely() > 0.1))) {
-//				terrarium.beutaltak.add("rovar \\n");
-//				terrarium.setSzabadHely(-0.1);
-//
-//			} else if ((eloszto.contains("kigyo")) && ((terrarium.getSzabadHely() > 5))) {
-//				terrarium.beutaltak.add("kigyo \\n");
-//				terrarium.setSzabadHely(-5);
-//			}
-//			}
-//		}		
-			System.out.println(eloszto.toString());
-//end of reading file
 		}
+		System.out.println("Madarak: " + madarKetrec.toString());
+		scnr.close();
+		
+//		System.out.println(terrarium.toString());
+//		System.out.println(ragadozoKifuto.toString());
+//		System.out.println(madarKetrec.toString());
+//end of reading file
+
 	}
 
 }
-
-

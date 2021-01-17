@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Ketrec {
 
-	static double meret;
 	static double szabadHely = 27.5;
 	ArrayList<String> beutaltak = new ArrayList<>();
 	static int terrariumSzam = 0;
@@ -12,21 +11,46 @@ public class Ketrec {
 	static int ragadozoKifutoSzam = 0;
 
 	
-	public Ketrec(double meret, double szabadHely, ArrayList<String> beutaltak) {
-		Ketrec.meret = 27.5;
+	public Ketrec(double szabadHely, ArrayList<String> beutaltak) {
 		Ketrec.szabadHely = 27.5;
 		this.beutaltak = null;
 	
 	}
 
 
-	public double getMeret() {
-		return meret;
-	}
-
 	public ArrayList<String> getBeutaltak() {
 		return beutaltak;
 	}
+
+	public static int getTerrariumSzam() {
+		return terrariumSzam;
+	}
+
+
+	public static void setTerrariumSzam(int terrariumSzam) {
+		Ketrec.terrariumSzam = terrariumSzam;
+	}
+
+
+	public static int getMadarKetrecSzam() {
+		return madarKetrecSzam;
+	}
+
+
+	public static void setMadarKetrecSzam(int madarKetrecSzam) {
+		Ketrec.madarKetrecSzam = madarKetrecSzam;
+	}
+
+
+	public static int getRagadozoKifutoSzam() {
+		return ragadozoKifutoSzam;
+	}
+
+
+	public static void setRagadozoKifutoSzam(int ragadozoKifutoSzam) {
+		Ketrec.ragadozoKifutoSzam = ragadozoKifutoSzam;
+	}
+
 
 	public void setBeutaltak(ArrayList<String> beutaltak) {
 		this.beutaltak =beutaltak;
@@ -40,8 +64,8 @@ public class Ketrec {
 		Ketrec.szabadHely += szabadHely;
 	}
 
-	@Override
-	public String toString() {
-		return "Ketrec [meret= " + meret + ", szabadHely= " + szabadHely + ", beutaltak= " + beutaltak + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Ketrec [szabadHely= " + szabadHely + ", beutaltak= " + beutaltak + "]";
+//	}
 }
