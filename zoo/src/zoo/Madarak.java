@@ -1,13 +1,15 @@
 package zoo;
 
-import java.util.ArrayList;
-
-public class Madarak extends Ketrec {
-	double madarMeret = 3.0;
+public class Madarak extends Animal {
 	String eszik = "rovar";
-	static int madarKetrecSzam;
 	
-	 public static int madarEloszto(double madarMeret, double szabadHely) {
+	public Madarak(String name, double meret) {
+		super(name, meret);
+		this.name = "madar";
+		this.meret = 3.0;
+	}
+
+	public static int madarEloszto(double madarMeret, double szabadHely) {
 		 
 		if(szabadHely < madarMeret) {
 			madarKetrecSzam++;
@@ -16,17 +18,5 @@ public class Madarak extends Ketrec {
 		}
 		return madarKetrecSzam;
 		}
-
-	public Madarak(double szabadHely, ArrayList<String> beutaltak, int tooMuch, double madarMeret,
-			String eszik) {
-		super(szabadHely, beutaltak);
-		this.madarMeret = madarMeret;
-		this.eszik = eszik;
-
-		madarEloszto(madarMeret,szabadHely);
-	}
-
-
-	
 	
 }

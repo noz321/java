@@ -14,11 +14,6 @@ public class Main extends Ketrec {
 
 	@SuppressWarnings("static-access")
 	public static void main(String[] args) throws FileNotFoundException {
-		double madarMeret = 3.0;
-		double rovarMeret = 0.1;
-		double medveMeret = 7.5;
-		double farkasMeret = 1.5;
-		double kigyoMeret = 5.0;
 
 		ArrayList<String> madarKetrec = new ArrayList<>();
 		ArrayList<String> terrarium = new ArrayList<>();

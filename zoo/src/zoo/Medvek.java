@@ -1,19 +1,15 @@
 package zoo;
 
-import java.util.ArrayList;
+public class Medvek extends Animal {
 
-public class Medvek extends Ketrec {
-
-	double medveMeret = 7.5;
-	String[] eszik = { "rovar", "kigyo", "madar" };
-
-
-	public Medvek(double szabadHely, ArrayList<String> beutaltak, int tooMuch, double medveMeret,
-			String[] eszik) {
-		super(szabadHely, beutaltak);
-		this.medveMeret = medveMeret;
-		this.eszik = eszik;
+	public Medvek(String name, double meret) {
+		super(name, meret);
+		this.name = "medve";
+		this.meret = 7.5;
+		
 	}
+
+
 
 	public static void medveEloszto(double medveMeret, double szabadHely) {
 		if(szabadHely < medveMeret) {
